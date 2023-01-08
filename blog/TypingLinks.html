@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Ecbjr -  Personal Blog</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="HTML Web Developer">
+        
+       
+        <meta content="A Blog Website for Eugene B." name="description">
+
+        <!-- Favicon -->
+        <link href="/img/favicon.ico" rel="icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:300;400;600;700;800&display=swap" rel="stylesheet">
+
+        <!-- Font Awesome -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="/css/style.css" rel="stylesheet">
+
+        <style>/* Imported font: Inter */
+
+            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap');
+            
+            /* List of variables */
+            
+            :root {
+            /* Colors: */
+              --bg: #16181d;
+              --accent: #5686f5;
+              --accent-10: #5686f510;
+              --emphasis: #000000;
+              --text: #98a0b3;
+            /* Typography */
+              --h1: 2.25rem;
+              --h2: 1.5rem;
+              --h3: 1.25rem;
+              --paragraph: 1.125rem;
+              --info-text: 1rem;
+              --text-width-wide: 70ch;
+              --text-width-medium: 60ch;
+              --fw-bold: 700; 
+              --fw-regular: 500;
+              --fw-light: 300;
+            /* Spacing */
+              --spacing-xxs: 0.5em;
+              --spacing-xs: 1em;
+              --spacing-s: 1.5em;
+              --spacing-m: 3em;
+              --spacing-l: 6em;
+              --spacing-xl: 8em;
+            /* Misc */
+              --radius-xs: 0.25em;
+              --radius-s: 0.5em;
+              --center-it: auto;
+            }
+            
+            #scroll-tracker {
+              height: 4px;
+              background-color: var(--accent);
+              position: fixed;
+              inset: 0 0 auto;
+              transform-origin: left;
+            }
+            
+            body {
+              background-color: var(--bg);
+              font-family: 'Inter', sans-serif;
+            }
+            
+            main {
+              margin-top: var(--spacing-xl);
+              padding-block: var(--spacing-m); 
+            }
+            
+            article {
+              margin: var(--center-it);
+              max-width: var(--text-width-wide);
+            }
+            
+            article > p ~ p {
+              margin-bottom: var(--spacing-s);
+            }
+            
+            h1 {
+              color: var(--emphasis);
+              margin-bottom: var(--spacing-s);
+              font-size: var(--h1);
+              font-weight: var(--fw-bold);
+            }
+            
+            h2 {
+              color: var(--emphasis);
+              margin-bottom: var(--spacing-s);
+              margin-top: var(--spacing-m);
+              font-size: var(--h2);
+              font-weight: var(--fw-bold);
+            }
+            
+            h3 {
+              color: var(--accent);
+              margin-bottom: var(--spacing-s);
+              font-size: var(--h3);
+              font-weight: var(--fw-bold);
+            }
+            
+            p {
+              font-size: var(--paragraph);
+              color: var(--text);
+              line-height: 32px;
+              letter-spacing: 0.25px;
+            }
+            
+            em {
+              color: var(--emphasis);
+            }
+            
+            cite {
+              font-weight: var(--fw-light);
+              color: var(--emphasis);
+              font-style: italic;
+            }
+            
+            .info_block {
+              display: flex;
+              gap: 6px;
+              margin-bottom: var(--spacing-xs);
+            }
+            
+            .info {
+              font-size: var(--info-text);
+              color: var(--text);
+            }
+            
+            .likes, .replies, .mentions {
+              font-size: var(--info-text);
+              color: var(--accent);
+            }
+            
+            .last_update {
+              display: inline-block;
+              background-color: var(--accent-10);
+              color: var(--accent);
+              margin-bottom: var(--spacing-l);
+              font-size: var(--info-text);
+              padding: var(--spacing-xxs) var(--spacing-xs);
+              border-radius: var(--radius-s);
+            }
+            
+            .link {
+              color: var(--accent);
+              cursor: pointer;
+            }
+            
+            img {
+              width: 100%;
+              margin-block: var(--spacing-m);
+              border-radius: var(--radius-xs);
+            }
+            
+            .highlight {
+              margin: var(--center-it);
+              margin-bottom: var(--spacing-m);
+              background-color: var(--accent-10);
+              max-width: var(--text-width-medium);
+              border-radius: var(--radius-s);
+              padding: var(--spacing-m);
+            }
+            
+            ul {
+              margin: var(--spacing-s);
+            }
+            
+            li {
+              padding-bottom: var(--spacing-s);
+              margin-left: var(--spacing-xs);
+              font-size: var(--paragraph);
+              color: var(--emphasis);
+              list-style: square;
+            }
+            
+            
+            @media screen and (max-width: 760px) {
+              body {
+                padding-inline: var(--spacing-s);
+              }
+              
+              .info_block {
+                flex-direction: column;
+              }
+              
+              .highlight {
+                padding: var(--spacing-s);
+                max-width: var(--text-width-wide);
+              }
+            }
+            </style>
+    </head>
+<body>
+  <div class="wrapper">
+    <div class="sidebar">
+        <div class="sidebar-text d-flex flex-column h-100 justify-content-center text-center">
+            <img class="mx-auto d-block w-75 bg-primary img-fluid rounded-circle mb-4 p-3" src="/img/profile.jpg" alt="Image">
+            <h1 class="font-weight-bold">Eugene B</h1>
+            <p class="mb-4">
+                A Seasoned Web Developer with Experience to match, Eugene Has been Developing Projects on the Web since 2013. <br>
+             
+                
+                I am a <b>Front-End Specialist</b> with HTML5 and CSS Superpowers and has intermediate knowledge and skills in <i>Back-end Development, Cybersecurity and Linux</i>. 
+                <br>
+                
+
+                <a class="btn btn-outline-primary mr-2" href=""><i class="fab fa-css3"></i></a>
+                <a class="btn btn-outline-primary mr-2" href=""><i class="fab fa-linux"></i></a>
+                
+                <br>Bonus Experience</b> such as <b>Blockchain, Augmented Reality</b> and <b>WebGL 3D Applications</b>.
+                
+                
+
+                
+            </p>
+
+            
+            <div class="d-flex justify-content-center mb-5">
+                
+                
+                
+                <a class="btn btn-outline-primary mr-2" href="https://www.linkedin.com/in/eugene-brown-jr-38210b99/"><i class="fab fa-linkedin-in"></i></a>
+                
+                <a class="btn btn-outline-primary mr-2" href="https://github.com/builde7b0b/"><i class="fab fa-github"></i></a>
+                <a class="btn btn-outline-primary mr-2" href="https://codepen.io/dagoa7"><i class="fab fa-codepen"></i></a>
+                <a class="btn btn-outline-primary mr-2" href="https://www.linkedin.com/in/eugene-brown-jr-38210b99/"><i class="fab fa-youtube"></i></a>
+            </div>
+            <a href="mailto: ecbjr.it@gmail.com" class="btn btn-lg btn-block btn-primary mt-auto">Hire Me</a>
+        </div>
+        <div class="sidebar-icon d-flex flex-column h-100 justify-content-center text-right">
+            <i class="fas fa-2x fa-angle-double-right text-primary"></i>
+        </div>
+    </div>
+    <div class="content">
+        <!-- Navbar Start -->
+        <div class="container p-0">
+            <nav class="navbar navbar-expand-lg bg-secondary navbar-dark">
+                <a href="" class="navbar-brand d-block d-lg-none">Navigation</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav m-auto">
+                        <a href="/index.html" class="nav-item nav-link active">Home</a>
+                        <a href="/about.html" class="nav-item nav-link">About</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Web Dev</a>
+                            <div class="dropdown-menu">
+                                <a href="/blog.html" class="dropdown-item">Blog Main</a>
+                                <a href="/blog/3DModelingWebsites.html" class="dropdown-item">Developer Portfolio</a>
+                               
+                                <a href="/blog/MacKeyboardShortcuts.html" class="dropdown-item">Mac Keyboard Shortcuts</a>
+                                <a href="/blog/DiscordCommands.html" class="dropdown-item">Discord Commands</a>
+                                <a href="/blog/MinifyJavascript.html" class="dropdown-item">Javascript-Minify</a>
+                                <a href="/blog/LearningHTML5.html" class="dropdown-item">Learning HTML5</a>
+                                <a href="/blog/3DModelingWebsites.html" class="dropdown-item">3D Modeling Websites</a>
+                                <a href="/blog/ASPMVC.html" class="dropdown-item">ASP MVC</a>
+                                <a href="/blog/3DModelingWebsites.html" class="dropdown-item">Javascript Frameworks & Libs</a>
+                                <a href="/blog/" class="dropdown-item">Mobile Development Tools</a>
+                                <a href="/blog/CiscoASA_JuniperScreenOS_Cheatsheet.html" class="dropdown-item">Web Development Tools</a>
+                                <a href="/blog/" class="dropdown-item">System Rescue CDs</a>
+                                <a href="/blog/ConvertOStoVM.html" class="dropdown-item">Top 10 Linux Distros</a>
+                                <a href="/blog/CronosDevSeries.html" class="dropdown-item">GO: Reference</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">JSON: Reference</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">VBNET VS. C#</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">THE EVOLUTION OF A SOFTWARE ENGINEER - KISS PRINCIPLE</a>
+                                <a href="/Under-Construction.htmll" class="dropdown-item">DIVE INTO MACHINE LEARNING</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">C Programming</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">Javascript Cheatsheet</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">Web Developer Links</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">Web Developer Checklist</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">HTML Cheatsheet</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">Learning CSS</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">Git Reference</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">SVN Reference</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">2013-2017 - Cyber Research</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">Comparison of Programming Languages</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">Comparison of Programming Languages</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">Comparison of Programming Languages</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">Comparison of Programming Languages</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">Comparison of Programming Languages</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">Comparison of Programming Languages</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">Comparison of Programming Languages</a>
+                                <a href="/blog/CyberGap.html" class="dropdown-item">2013: Cyber Gap</a>
+                                
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">CyberSec</a>
+                            <div class="dropdown-menu">
+                                <a href="/blog.html" class="dropdown-item">Blog Main</a>
+                                
+                                <a href="/Under-Construction.html" class="dropdown-item">Android Exploit - LibStageFright</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">Elite Hacking Subjects</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">Convert OS to VM</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">Digital Forensics - Intro</a>
+                                <a href="/Under-Construction.htmll" class="dropdown-item">CISCO ASA and SLA Monitoring</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">Cache Side-Channel Attacks</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">Tool Spotlight: Rohos</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">Open Source Tools: IDE's</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">HACKLU CTF 2015 WRITEUPS</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">ENCRYPT AND DECRYPT FILE USING VISUAL C#</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">Steganography</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">Cyber Threat Intelligence</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">User Mode Sandboxing</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">GLOSSARY - CRYPTOGRAPHY</a>
+                                
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Web3</a>
+                            <div class="dropdown-menu">
+                                <a href="/blog.html" class="dropdown-item">Blog Main</a>
+                                
+                                <a href="/blog/LearningSolidity.html" class="dropdown-item">Learning Solidity</a>
+                                
+                                
+                                <a href="/blog/Issue-XYZdomain.html" class="dropdown-item">ISSUES: XYZ Domains</a>
+                                <a href="/blog/MetamaskConnectButton.html" class="dropdown-item">BLOCKCHAIN: Metamask Connect Button</a>
+                                <a href="/blog/CryptoPayments.html" class="dropdown-item">BLOCKCHAIN: Crypto Payments</a>
+                                
+                                <a href="/blog/CronosDevSeries.html" class="dropdown-item">BLOCKCHAIN: Cronos Dev Series</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">BLOCKCHAIN: NFT Staking Contract</a>
+                                <a href="/Under-Construction.html" class="dropdown-item">BIT ADDRESS BITCOIN WALLETS</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Navbar End -->
+            <!-- Page Header Start -->
+            <div class="container py-5 px-2 bg-primary">
+                <div class="row py-5 px-4">
+                    <div class="col-sm-6 text-center text-md-left">
+                        <h1 class="mb-3 mb-md-0 text-white text-uppercase font-weight-bold">My Blog</h1>
+                    </div>
+                    <div class="col-sm-6 text-center text-md-right">
+                        <div class="d-inline-flex pt-2">
+                            <h4 class="m-0 text-white"><a class="text-white" href="">Home</a></h4>
+                            <h4 class="m-0 text-white px-2">/</h4>
+                            <h4 class="m-0 text-white">My Blog</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Page Header End -->
+
+            <div id="scroll-tracker"></div>
+  
+            <main>
+              
+              <article>
+                <h1>TITLE OF BLOG - 3D MODELING WEBSITE WITH WEBGL</h1>
+                <div class="info_block">
+                  <p class="info">December 10, 2022 / 8min read </p>
+                  <p class="likes">&#8226 124 lIkes</p>
+                  <p class="replies"> &#8226 12 replies</p>
+                  <p class="mentions"> &#8226 3 mentions</p>
+                </div> 
+                <div>
+                  <p class="last_update">Last updated December 12, 2022</p>
+                </div> 
+                
+                <!--INTRODUCTION
+                
+                -->
+                  <p>Andrei Arsenyevich Tarkovsky 4 April 1932[1] – 29 December 1986) was a Soviet filmmaker. Widely considered one of the greatest and most influential filmmakers of all time, his films explore <em>spiritual and metaphysical themes</em>, and are noted for their slow pacing and long takes, dreamlike visual imagery, and preoccupation with <em>nature and memory</em>.</p>
+              </article>
+              
+              <article>
+                <h2>Introduction to Website building - WebGL</h2><!--FIRST SECTION-->
+                <p>What is WebGL? and Why do we not see it being used that much in modern day websites? such as   <span class="link">Arseny Aleksandrovich Tarkovsky</span>, a native of Yelysavethrad (now Kropyvnytskyi, Ukraine), and Maria Ivanova Vishnyakova, a graduate of the <em>Maxim Gorky Literature Institute</em> who later worked as a corrector; she was born in Moscow in the Dubasov family estate.</p> 
+                <img src="https://www.sensesofcinema.com/wp-content/uploads/2002/05/Andrei-Tarkovsky.png" alt="Andrei Tarkovsky Portrait">
+                <p>According to the family legend, Tarkovsky's ancestors on his father's side were princes from the <span class="link">Shamkhalate of Tarki</span>, Dagestan, although his sister Marina Tarkovskaya who did a detailed research on their genealogy called it "a myth, even a prank of sorts," stressing that none of the documents confirms this version.</p>
+              </article>
+              
+              <article>
+                <h2>Film school student</h2><!--SECOND SECTION-->
+                <p>Upon returning from the research expedition in 1954, Tarkovsky applied at the <em>State Institute of Cinematography 🎥</em> and was admitted to the film-directing program. He was in the same class as <em>Irma Raush</em> whom he married in April 1957.</p>
+                <p>The early Khrushchev era offered good opportunities for young film directors. Before 1953, annual film production was low and most films were directed by veteran directors. After 1953, more films were produced, many of them by young directors. The Khrushchev Thaw relaxed Soviet social restrictions a bit and permitted a limited influx of European and North American literature, films and music. This allowed Tarkovsky to see films of the <span class="link">Italian neorealists</span>, <span class="link">French New Wave</span>, and of directors such as <em>Kurosawa</em>, <em>Buñuel</em>, <em>Bergman</em>, <em>Bresson</em>, <em>Wajda</em> (whose film Ashes and Diamonds influenced Tarkovsky) and <em>Mizoguchi</em>.</p> 
+                <img src="https://mf.b37mrtl.ru/rbthmedia/images/web/en-rbth/images/2014-11/top/Tarkovsky-top.jpg" alt="Director Andrei Tarkovsky with a movie camera">
+              </article>
+              
+              <div class="highlight">
+                  <h3>💡 Inspiration</h3><!--FIRST SECTION-->
+                  <p>Tarkovsky was, according to fellow student Shavkat Abdusalmov, fascinated by <em>Japanese films</em>. He was amazed by how every character on the screen is exceptional and how everyday events such as a Samurai cutting bread with his sword are elevated to something special and put into the limelight. Tarkovsky has also expressed interest in <em>art of Haiku</em> and its ability to create "images in such a way that they mean nothing beyond themselves"</p>
+              </div>
+              
+              <article>
+                <h2>Famous Movies</h2><!--THIRD SECTION -->
+                <p>Tarkovsky is mainly known as a film director. During his career he directed seven feature films, as well as three shorts from his time at VGIK. His features are:</p>
+                <ul>
+                  <li>Ivan's Childhood (1962)</li>
+                  <li>Andrei Rublev (1966)</li>
+                  <li>Solaris (1972)</li>
+                  <li>Mirror (1975)</li>
+                  <li>Stalker (1979)</li>
+                  <li>Nostalghia (1983)</li>
+                  <li>The Sacrifice (1986)</li>
+                </ul>
+              
+                <p>He also wrote several screenplays. Furthermore, he directed the play Hamlet for the stage in Moscow, directed the opera Boris Godunov in London, and he directed a radio production of the short story Turnabout by William Faulkner. He also wrote Sculpting in Time, a book on film theory.</p>
+                <p>Tarkovsky's <em>first feature film</em> was Ivan's Childhood in 1962. He then directed Andrei Rublev in 1966, Solaris in 1972, Mirror in 1975 and Stalker in 1979. The documentary <em>Voyage in Time</em> was produced in Italy in 1982, as was Nostalghia in 1983. His last film The Sacrifice was produced in Sweden in 1986. Tarkovsky was personally involved in writing the screenplays for all his films, sometimes with a cowriter. Tarkovsky once said: <cite>"A director who realizes somebody else's screenplay without being involved in it becomes a mere illustrator, resulting in dead and monotonous films.""</cite></p> 
+                <img src="https://faroutmagazine.co.uk/static/uploads/2021/06/5-shots-that-prove-Andrei-Tarkovsky-was-a-genius.jpg" alt="">
+              </article>
+               
+            </main> 
+          <h2>Development Journal</h2>
+          <p>Typing Practice - Links</p>
+         <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">(Mastery <span style="color: #000000; font-weight: bold">and</span> Slowness)
+
+<span style="color: #6600EE; font-weight: bold">1.</span> http:<span style="color: #333333">//</span>www<span style="color: #333333">.</span>keybr<span style="color: #333333">.</span>com<span style="color: #333333">/</span>
+<span style="color: #6600EE; font-weight: bold">2.</span> http:<span style="color: #333333">//</span><span style="color: #0000DD; font-weight: bold">10</span>fastfingers<span style="color: #333333">.</span>com<span style="color: #333333">/</span>typing<span style="color: #333333">-</span>test<span style="color: #333333">/</span>english
+<span style="color: #6600EE; font-weight: bold">3.</span> http:<span style="color: #333333">//</span>www<span style="color: #333333">.</span>typing<span style="color: #333333">-</span>lessons<span style="color: #333333">.</span>org<span style="color: #333333">/</span>lesson_1<span style="color: #333333">.</span>html
+<span style="color: #6600EE; font-weight: bold">4.</span> http:<span style="color: #333333">//</span>www<span style="color: #333333">.</span>typing<span style="color: #333333">-</span>lessons<span style="color: #333333">.</span>org<span style="color: #333333">/</span>lesson_2<span style="color: #333333">.</span>html
+<span style="color: #6600EE; font-weight: bold">5.</span> typing<span style="color: #333333">.</span>io <span style="color: #888888"># Coding Practice</span>
+<span style="color: #6600EE; font-weight: bold">6.</span> http:<span style="color: #333333">//</span>www<span style="color: #333333">.</span>typing<span style="color: #333333">-</span>lessons<span style="color: #333333">.</span>org<span style="color: #333333">/</span>Exercise_6<span style="color: #333333">.</span>html <span style="color: #888888"># one hand, left hand</span>
+</pre></div>
+
+
+                
+                <!-- Footer Start -->
+                <div class="container py-4 bg-secondary text-center">
+                    <p class="m-0 text-white">
+                        &copy; <a class="text-white font-weight-bold" href="#">ecbdev.xyz</a>. All Rights Reserved. Designed by <a class="text-white font-weight-bold" href="https://htmlcodex.com">Eugene B.</a>
+                    </p>
+                </div>
+                <!-- Footer End -->
+            </div>
+        </div>
+        
+        <!-- Back to Top -->
+        <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+
+        <!-- Contact Javascript File -->
+        <script src="mail/jqBootstrapValidation.min.js"></script>
+        <script src="mail/contact.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+</html>

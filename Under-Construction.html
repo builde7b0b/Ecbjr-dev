@@ -1,0 +1,119 @@
+<head>
+
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Audiowide:400,700&subset=latin,latin-ext);
+.center {
+  margin-right: auto;
+  margin-left: auto;
+}
+.center-translate {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.uc {
+  font-family: Audiowide, sans-serif;
+  font-weight: 700;
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  border: 0.1em solid #212529;
+  padding: 0.7em;
+  width: auto;
+  text-align: center;
+  font-size: 30px;
+  border-radius: 0.3em;
+  text-shadow: 1px 1px 0px #f8f9fa;
+  color: #212529;
+  white-space: nowrap;
+  background: repeating-linear-gradient(45deg, #ffd43b, #ffd43b 0.6em, #212529 0.6em, #212529 1.3em);
+}
+.uc span, .uc i {
+  position: relative;
+  z-index: 5;
+}
+.uc:before {
+  content: "";
+  position: absolute;
+  top: 0.6em;
+  bottom: 0.6em;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  background-color: #ffd43b;
+}
+.uc.uc-biohazard {
+  color: #f03e3e;
+  text-shadow: 1px 1px 0px #212529;
+  background: repeating-linear-gradient(45deg, #212529, #212529 0.6em, #f03e3e 0.6em, #f03e3e 1.3em);
+}
+.uc.uc-biohazard:before {
+  background-color: #212529;
+}
+.uc.uc-mines {
+  color: #f8f9fa;
+  text-shadow: 1px 1px 0px #212529;
+  background: repeating-linear-gradient(45deg, #f8f9fa, #f8f9fa 0.6em, #212529 0.6em, #212529 1.3em);
+}
+.uc.uc-mines:before {
+  background-color: #f03e3e;
+}
+.uc-sm {
+  font-size: 20px;
+}
+.uc-pos-fix {
+  position: relative;
+  width: 483px !important;
+}
+.uc-pos-fix.uc-sm {
+  width: 322px !important;
+}
+html.under-construction {
+  background: #aaaaaa url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+}
+
+    </style>
+</head>
+
+<div class="center-translate">
+    <h2 class="uc uc-pos-fix center">
+      <i class="fa fa-exclamation-triangle"></i>
+      <span>UNDER CONSTRUCTION</span>
+      <i class="fa fa-exclamation-triangle"></i>
+    </h2>
+    <h2 class="uc uc-sm uc-pos-fix center">
+      <i class="fa fa-exclamation-triangle"></i>
+      <span>UNDER CONSTRUCTION</span>
+      <i class="fa fa-exclamation-triangle"></i>
+    </h2>
+    <hr />
+    <h2 class="uc uc-biohazard uc-pos-fix center">
+      <span>&#9763;</span>
+      <span>BIOLOGICAL HAZARD</span>
+      <span>&#9763;</span>
+    </h2>
+    <h2 class="uc uc-biohazard uc-sm uc-pos-fix center">
+      <span>&#9763;</span>
+      <span>BIOLOGICAL HAZARD</span>
+      <span>&#9763;</span>
+    </h2>
+    <hr />
+    <h2 class="uc uc-mines uc-pos-fix center">
+      <span>&#9760;</span>
+      <span>DANGER! MINES!</span>
+      <span>&#9760;</span>
+    </h2>
+    <h2 class="uc uc-mines uc-sm uc-pos-fix center">
+      <span>&#9760;</span>
+      <span>DANGER! MINES!</span>
+      <span>&#9760;</span>
+    </h2>
+  </div>
+
+
+  <a href="/index.html">
+    <button>Return Home</button>
+
+  </a>
+  
